@@ -31,7 +31,7 @@ ws recent [-n <limit>] [--offset <n>] [--order-by-creation | --order-by-modified
 ```
 
 The newest entries, default 50. A listing shows the subject alone,
-marked `[+]` when the entry has a body or metadata.
+open an entry with `ws entry` to see its body and metadata.
 
 ### search
 

@@ -39,10 +39,9 @@ Usage:
 Entries have a required type (e.g. note, todo, decision, idea), a
 short subject, an optional longer body, and any number of metadata
 key=value pairs (project, jira, pr, repo, ...). Keep the subject to a
-headline and put detail in the body. Lists show only the subject, with
-a [+] marker when a body or metadata exists; 'ws entry' shows those in
-full. IDs look like e123. Times are stored in UTC and shown in local
-time.
+headline and put detail in the body. Lists show only the subject. Open
+an entry with 'ws entry' to see its body and metadata. IDs look like
+e123. Times are stored in UTC and shown in local time.
 
 Each entry records its origin: the OS user, host, and directory of the
 ws client, plus the Claude Code session id when set. 'ws add' captures

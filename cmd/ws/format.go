@@ -40,18 +40,13 @@ func listTime(e api.Entry, orderByModified bool) time.Time {
 }
 
 // printEntryLine prints one log-style line per entry: id, type, and the
-// listed time, then the subject. A trailing [+] marks entries with a
-// body or metadata, both of which 'ws entry' shows in full. Newlines in
-// the subject are escaped to keep the line a line. The date lives in a
-// heading above each day's entries (see printSearchResult).
+// listed time, then the subject. Newlines in the subject are escaped to
+// keep the line a line. The date lives in a heading above each day's
+// entries (see printSearchResult).
 func printEntryLine(e api.Entry, orderByModified bool) {
 	subject := strings.ReplaceAll(e.Subject, "\n", "\\n")
-	marker := ""
-	if e.Body != "" || len(e.Metadata) > 0 {
-		marker = " [+]"
-	}
-	fmt.Printf("[e%d] (%s) %s: %s%s\n", e.ID, e.Type,
-		localClock(listTime(e, orderByModified)), subject, marker)
+	fmt.Printf("[e%d] (%s) %s: %s\n", e.ID, e.Type,
+		localClock(listTime(e, orderByModified)), subject)
 }
 
 func printOrigin(o api.Origin) {
